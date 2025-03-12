@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <meta name="description" content="Frontend Mentor | Social media dashboard with theme switcher">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | [Social media dashboard with theme switcher]</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="dashboard">
+      <section class="header">
+        <h1>
+          Social Media Dashboard
+        </h1>
+        <section class="color-scheme">
+          <span>
+            Dark Mode
+          </span>
+          <section class="theme-toggle">
+            <label for="dark-mode" aria-label="dark-mode">
+              <input type="radio" name="color-scheme" id="dark-mode" checked>
+            </label>
+            <label for="light-mode" aria-label="light-mode">
+              <input type="radio" name="color-scheme" id="light-mode">
+            </label>
+          </section>
+        </section>
+        <h2>
+          Total Followers: 23,004
+        </h2>
+      </section>
+
+      <total-stats>
+        <template shadowrootmode="open">
+          <section class="total-stats">
+            <total-card type="facebook" change="increase">
+              <template shadowrootmode="open">
+                <section class="total-card">
+                  <section class="social-media-type">
+                    <img class="social-media-icon" title="social media icon">
+                    <span>
+                      @nathanf
+                    </span>
+                  </section>
+                  <p class="total">
+                    1987
+                  </p>
+                  <p class="followers">
+                    Followers
+                  </p>
+                  <p class="change">
+                    <img class="direction-icon" title="Indicates increase or decrease">
+                    <span>
+                      12 Today
+                    </span>
+                  </p>
+                </section>
+                <style>
+                  section[class="total-card"] {
+                    display: grid;
+                    place-items: center;
+                    background-color: var(--card-bg);
+                    box-sizing: border-box;
+                    padding: 40px;
+                    gap: 40px;
+                    border-top: 2px solid var(--social-media-color);
+                    border-image-source: var(--social-media-color);
+                    border-image-width: 2px 0 0 0;
+                    border-image-slice: 1;
+                    cursor: pointer;
+                    border-radius: 10px;
+                  }
+
+                  section[class="total-card"]:hover {
+                    filter: brightness(1.2);
+                  }
+
+                  p {
+                    margin: 0;
+                  }
+
+
+                  section[class="social-media-type"] {
+                    display: grid;
+                    place-items: center;
+                    grid-auto-flow: column;
+                    gap: 10px;
+                    color: var(--alternative-color);
+                  }
+
+                  :host([change="increase"]) {
+                    --text-update: hsl(163, 72%, 41%);
+
+                    img[class="direction-icon"] {
+                      content: url("./images/icon-up.svg");
+                    }
+                  }
+
+                  :host([change="decrease"]) {
+                    --text-update: hsl(356, 69%, 56%);
+
+                    img[class="direction-icon"] {
+                      content: url("./images/icon-down.svg");
+                    }
+                  }
+
+                  :host([type="facebook"]) {
+                    --social-media-color: hsl(208, 92%, 53%);
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-facebook.svg) / "Facebook Icon";
+                    }
+                  }
+
+                  :host([type="instagram"]) {
+                    --social-media-color: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-instagram.svg) / "Instagram Icon";
+                    }
+                  }
+
+                  :host([type="twitter"]) {
+                    --social-media-color: hsl(203, 89%, 53%);
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-twitter.svg) / "Twitter Icon";
+                    }
+                  }
+
+                  :host([type="youtube"]) {
+                    --social-media-color: hsl(348, 97%, 39%);
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-youtube.svg) / "Youtube Icon";
+                    }
+                  }
+
+                  p[class="total"] {
+                    font-size: 4em;
+                    font-weight: 700;
+                  }
+
+                  p[class="followers"] {
+                    letter-spacing: 10px;
+                    color: var(--alternative-color);
+                    text-transform: uppercase;
+                  }
+
+                  p[class="change"] {
+                    display: grid;
+                    align-items: center;
+                    grid-auto-flow: column;
+                    gap: 10px;
+                    color: var(--text-update);
+                  }
+                </style>
+              </template>
+            </total-card>
+
+            <total-card type="twitter" change="increase">
+              <template shadowrootmode="open">
+                <section class="total-card">
+                  <section class="social-media-type">
+                    <img class="social-media-icon" title="social media icon">
+                    <span>
+                      @nathanf
+                    </span>
+                  </section>
+                  <p class="total">
+                    1044
+                  </p>
+                  <p class="followers">
+                    Followers
+                  </p>
+                  <p class="change">
+                    <img class="direction-icon" title="Indicates increase or decrease">
+                    <span>
+                      99 Today
+                    </span>
+                  </p>
+                </section>
+                <style>
+                  section[class="total-card"] {
+                    display: grid;
+                    place-items: center;
+                    background-color: var(--card-bg);
+                    box-sizing: border-box;
+                    padding: 40px;
+                    gap: 40px;
+                    border-top: 2px solid var(--social-media-color);
+                    border-image-source: var(--social-media-color);
+                    border-image-width: 2px 0 0 0;
+                    border-image-slice: 1;
+                    cursor: pointer;
+                    border-radius: 10px;
+                  }
+
+                  section[class="total-card"]:hover {
+                    filter: brightness(1.2);
+                  }
+
+                  p {
+                    margin: 0;
+                  }
+
+
+                  section[class="social-media-type"] {
+                    display: grid;
+                    place-items: center;
+                    grid-auto-flow: column;
+                    gap: 10px;
+                    color: var(--alternative-color);
+                  }
+
+                  :host([change="increase"]) {
+                    --text-update: hsl(163, 72%, 41%);
+
+                    img[class="direction-icon"] {
+                      content: url("./images/icon-up.svg");
+                    }
+                  }
+
+                  :host([change="decrease"]) {
+                    --text-update: hsl(356, 69%, 56%);
+
+                    img[class="direction-icon"] {
+                      content: url("./images/icon-down.svg");
+                    }
+                  }
+
+                  :host([type="facebook"]) {
+                    --social-media-color: hsl(208, 92%, 53%);
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-facebook.svg) / "Facebook Icon";
+                    }
+                  }
+
+                  :host([type="instagram"]) {
+                    --social-media-color: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-instagram.svg) / "Instagram Icon";
+                    }
+                  }
+
+                  :host([type="twitter"]) {
+                    --social-media-color: hsl(203, 89%, 53%);
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-twitter.svg) / "Twitter Icon";
+                    }
+                  }
+
+                  :host([type="youtube"]) {
+                    --social-media-color: hsl(348, 97%, 39%);
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-youtube.svg) / "Youtube Icon";
+                    }
+                  }
+
+                  p[class="total"] {
+                    font-size: 4em;
+                    font-weight: 700;
+                  }
+
+                  p[class="followers"] {
+                    letter-spacing: 10px;
+                    color: var(--alternative-color);
+                    text-transform: uppercase;
+                  }
+
+                  p[class="change"] {
+                    display: grid;
+                    align-items: center;
+                    grid-auto-flow: column;
+                    gap: 10px;
+                    color: var(--text-update);
+                  }
+                </style>
+              </template>
+            </total-card>
+
+
+            <total-card type="instagram" change="increase">
+              <template shadowrootmode="open">
+                <section class="total-card">
+                  <section class="social-media-type">
+                    <img class="social-media-icon" title="social media icon">
+                    <span>
+                      @nathanf
+                    </span>
+                  </section>
+                  <p class="total">
+                    11k
+                  </p>
+                  <p class="followers">
+                    Followers
+                  </p>
+                  <p class="change">
+                    <img class="direction-icon" title="Indicates increase or decrease">
+                    <span>
+                      1099 Today
+                    </span>
+                  </p>
+                </section>
+                <style>
+                  section[class="total-card"] {
+                    display: grid;
+                    place-items: center;
+                    background-color: var(--card-bg);
+                    box-sizing: border-box;
+                    padding: 40px;
+                    gap: 40px;
+                    border-top: 2px solid var(--social-media-color);
+                    border-image-source: var(--social-media-color);
+                    border-image-width: 2px 0 0 0;
+                    border-image-slice: 1;
+                    cursor: pointer;
+                    border-radius: 10px;
+                  }
+
+                  section[class="total-card"]:hover {
+                    filter: brightness(1.2);
+                  }
+
+                  p {
+                    margin: 0;
+                  }
+
+
+                  section[class="social-media-type"] {
+                    display: grid;
+                    place-items: center;
+                    grid-auto-flow: column;
+                    gap: 10px;
+                    color: var(--alternative-color);
+                  }
+
+                  :host([change="increase"]) {
+                    --text-update: hsl(163, 72%, 41%);
+
+                    img[class="direction-icon"] {
+                      content: url("./images/icon-up.svg");
+                    }
+                  }
+
+                  :host([change="decrease"]) {
+                    --text-update: hsl(356, 69%, 56%);
+
+                    img[class="direction-icon"] {
+                      content: url("./images/icon-down.svg");
+                    }
+                  }
+
+                  :host([type="facebook"]) {
+                    --social-media-color: hsl(208, 92%, 53%);
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-facebook.svg) / "Facebook Icon";
+                    }
+                  }
+
+                  :host([type="instagram"]) {
+                    --social-media-color: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-instagram.svg) / "Instagram Icon";
+                    }
+                  }
+
+                  :host([type="twitter"]) {
+                    --social-media-color: hsl(203, 89%, 53%);
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-twitter.svg) / "Twitter Icon";
+                    }
+                  }
+
+                  :host([type="youtube"]) {
+                    --social-media-color: hsl(348, 97%, 39%);
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-youtube.svg) / "Youtube Icon";
+                    }
+                  }
+
+                  p[class="total"] {
+                    font-size: 4em;
+                    font-weight: 700;
+                  }
+
+                  p[class="followers"] {
+                    letter-spacing: 10px;
+                    color: var(--alternative-color);
+                    text-transform: uppercase;
+                  }
+
+                  p[class="change"] {
+                    display: grid;
+                    align-items: center;
+                    grid-auto-flow: column;
+                    gap: 10px;
+                    color: var(--text-update);
+                  }
+                </style>
+              </template>
+            </total-card>
+
+            <total-card type="youtube" change="decrease">
+              <template shadowrootmode="open">
+                <section class="total-card">
+                  <section class="social-media-type">
+                    <img class="social-media-icon" title="social media icon">
+                    <span>
+                      @nathanf
+                    </span>
+                  </section>
+                  <p class="total">
+                    8239
+                  </p>
+                  <p class="followers">
+                    Subscribers
+
+                  </p>
+                  <p class="change">
+                    <img class="direction-icon" title="Indicates increase or decrease">
+                    <span>
+                      144 Today
+                    </span>
+                  </p>
+                </section>
+                <style>
+                  section[class="total-card"] {
+                    display: grid;
+                    place-items: center;
+                    background-color: var(--card-bg);
+                    box-sizing: border-box;
+                    padding: 40px;
+                    gap: 40px;
+                    border-top: 2px solid var(--social-media-color);
+                    border-image-source: var(--social-media-color);
+                    border-image-width: 2px 0 0 0;
+                    border-image-slice: 1;
+                    cursor: pointer;
+                    border-radius: 10px;
+                  }
+
+                  section[class="total-card"]:hover {
+                    filter: brightness(1.2);
+                  }
+
+                  p {
+                    margin: 0;
+                  }
+
+
+                  section[class="social-media-type"] {
+                    display: grid;
+                    place-items: center;
+                    grid-auto-flow: column;
+                    gap: 10px;
+                    color: var(--alternative-color);
+                  }
+
+                  :host([change="increase"]) {
+                    --text-update: hsl(163, 72%, 41%);
+
+                    img[class="direction-icon"] {
+                      content: url("./images/icon-up.svg");
+                    }
+                  }
+
+                  :host([change="decrease"]) {
+                    --text-update: hsl(356, 69%, 56%);
+
+                    img[class="direction-icon"] {
+                      content: url("./images/icon-down.svg");
+                    }
+                  }
+
+                  :host([type="facebook"]) {
+                    --social-media-color: hsl(208, 92%, 53%);
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-facebook.svg) / "Facebook Icon";
+                    }
+                  }
+
+                  :host([type="instagram"]) {
+                    --social-media-color: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-instagram.svg) / "Instagram Icon";
+                    }
+                  }
+
+                  :host([type="twitter"]) {
+                    --social-media-color: hsl(203, 89%, 53%);
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-twitter.svg) / "Twitter Icon";
+                    }
+                  }
+
+                  :host([type="youtube"]) {
+                    --social-media-color: hsl(348, 97%, 39%);
+
+                    img[class="social-media-icon"] {
+                      content: url(./images/icon-youtube.svg) / "Youtube Icon";
+                    }
+                  }
+
+                  p[class="total"] {
+                    font-size: 4em;
+                    font-weight: 700;
+                  }
+
+                  p[class="followers"] {
+                    letter-spacing: 10px;
+                    color: var(--alternative-color);
+                    text-transform: uppercase;
+                  }
+
+                  p[class="change"] {
+                    display: grid;
+                    align-items: center;
+                    grid-auto-flow: column;
+                    gap: 10px;
+                    color: var(--text-update);
+                  }
+                </style>
+              </template>
+            </total-card>
+
+          </section>
+          <style>
+            section[class="total-stats"] {
+              display: grid;
+              box-sizing: border-box;
+              padding: 10px 10%;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 20px;
+            }
+
+            @container(inline-size < 1000px) {
+              section[class="total-stats"] {
+                grid-template-columns: 1fr;
+              }
+            }
+          </style>
+        </template>
+      </total-stats>
+
+      <p class="overview-today">
+        Overview - Today
+      </p>
+
+      <today-stats>
+        <template shadowrootmode="open">
+      </today-stats>
+      <section class="today-stats">
+
+        <today-card type="facebook" change="increase">
+          <template shadowrootmode="open">
+            <section class="today-card">
+              <span class="fact-type">
+                Page views
+              </span>
+              <img class="social-media-icon" title="social media icon">
+              <span class="amount">
+                87
+              </span>
+              <p class="change">
+                <img class="direction-icon" title="Indicates increase or decrease">
+                <span>
+                  3%
+                </span>
+              </p>
+            </section>
+            <style>
+              section[class="today-card"] {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                justify-content: space-between;
+                background: var(--card-bg);
+                box-sizing: border-box;
+                padding: 40px;
+                border-radius: 10px;
+                row-gap: 20px;
+                width: 100%;
+                height: 100%;
+              }
+
+              span[class="fact-type"] {
+                color: var(--alternative-color);
+              }
+
+              span[class="amount"] {
+                font-size: 2.5em;
+                font-weight: 700;
+                color: var(--heading-text);
+              }
+
+              p[class="change"] {
+                display: grid;
+                align-items: center;
+                grid-auto-flow: column;
+                gap: 10px;
+                color: var(--text-update);
+                width: min-content;
+              }
+
+              img {
+                justify-self: end;
+              }
+
+              :host([change="increase"]) {
+                --text-update: hsl(163, 72%, 41%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-up.svg");
+                }
+              }
+
+              :host([change="decrease"]) {
+                --text-update: hsl(356, 69%, 56%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-down.svg");
+                }
+              }
+
+              :host([type="facebook"]) {
+                --social-media-color: hsl(208, 92%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-facebook.svg) / "Facebook Icon";
+                }
+              }
+
+              :host([type="instagram"]) {
+                --social-media-color: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-instagram.svg) / "Instagram Icon";
+                }
+              }
+
+              :host([type="twitter"]) {
+                --social-media-color: hsl(203, 89%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-twitter.svg) / "Twitter Icon";
+                }
+              }
+
+              :host([type="youtube"]) {
+                --social-media-color: hsl(348, 97%, 39%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-youtube.svg) / "Youtube Icon";
+                }
+              }
+            </style>
+          </template>
+        </today-card>
+
+
+        <today-card type="facebook" change="decrease">
+          <template shadowrootmode="open">
+            <section class="today-card">
+              <span class="fact-type">
+                Likes
+              </span>
+              <img class="social-media-icon" title="social media icon">
+              <span class="amount">
+                52
+              </span>
+              <p class="change">
+                <img class="direction-icon" title="Indicates increase or decrease">
+                <span>
+                  2%
+                </span>
+              </p>
+            </section>
+            <style>
+              section[class="today-card"] {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                justify-content: space-between;
+                background: var(--card-bg);
+                box-sizing: border-box;
+                padding: 40px;
+                border-radius: 10px;
+                row-gap: 20px;
+                height: 100%;
+                width: 100%;
+              }
+
+              span[class="fact-type"] {
+                color: var(--alternative-color);
+              }
+
+              span[class="amount"] {
+                font-size: 2.5em;
+                font-weight: 700;
+                color: var(--heading-text);
+              }
+
+              p[class="change"] {
+                display: grid;
+                align-items: center;
+                grid-auto-flow: column;
+                gap: 10px;
+                color: var(--text-update);
+                width: min-content;
+              }
+
+              img {
+                justify-self: end;
+              }
+
+              :host([change="increase"]) {
+                --text-update: hsl(163, 72%, 41%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-up.svg");
+                }
+              }
+
+              :host([change="decrease"]) {
+                --text-update: hsl(356, 69%, 56%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-down.svg");
+                }
+              }
+
+              :host([type="facebook"]) {
+                --social-media-color: hsl(208, 92%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-facebook.svg) / "Facebook Icon";
+                }
+              }
+
+              :host([type="instagram"]) {
+                --social-media-color: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-instagram.svg) / "Instagram Icon";
+                }
+              }
+
+              :host([type="twitter"]) {
+                --social-media-color: hsl(203, 89%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-twitter.svg) / "Twitter Icon";
+                }
+              }
+
+              :host([type="youtube"]) {
+                --social-media-color: hsl(348, 97%, 39%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-youtube.svg) / "Youtube Icon";
+                }
+              }
+            </style>
+          </template>
+        </today-card>
+
+        <today-card type="instagram" change="increase">
+          <template shadowrootmode="open">
+            <section class="today-card">
+              <span class="fact-type">
+                Likes
+              </span>
+              <img class="social-media-icon" title="social media icon">
+              <span class="amount">
+                5462
+              </span>
+              <p class="change">
+                <img class="direction-icon" title="Indicates increase or decrease">
+                <span>
+                  2257%
+                </span>
+              </p>
+            </section>
+            <style>
+              section[class="today-card"] {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                justify-content: space-between;
+                background: var(--card-bg);
+                box-sizing: border-box;
+                padding: 40px;
+                border-radius: 10px;
+                row-gap: 20px;
+                height: 100%;
+                width: 100%;
+              }
+
+              span[class="fact-type"] {
+                color: var(--alternative-color);
+              }
+
+              span[class="amount"] {
+                font-size: 2.5em;
+                font-weight: 700;
+                color: var(--heading-text);
+              }
+
+              p[class="change"] {
+                display: grid;
+                align-items: center;
+                grid-auto-flow: column;
+                gap: 10px;
+                color: var(--text-update);
+                width: min-content;
+              }
+
+              img {
+                justify-self: end;
+              }
+
+              :host([change="increase"]) {
+                --text-update: hsl(163, 72%, 41%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-up.svg");
+                }
+              }
+
+              :host([change="decrease"]) {
+                --text-update: hsl(356, 69%, 56%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-down.svg");
+                }
+              }
+
+              :host([type="facebook"]) {
+                --social-media-color: hsl(208, 92%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-facebook.svg) / "Facebook Icon";
+                }
+              }
+
+              :host([type="instagram"]) {
+                --social-media-color: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-instagram.svg) / "Instagram Icon";
+                }
+              }
+
+              :host([type="twitter"]) {
+                --social-media-color: hsl(203, 89%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-twitter.svg) / "Twitter Icon";
+                }
+              }
+
+              :host([type="youtube"]) {
+                --social-media-color: hsl(348, 97%, 39%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-youtube.svg) / "Youtube Icon";
+                }
+              }
+            </style>
+          </template>
+        </today-card>
+
+        <today-card type="instagram" change="increase">
+          <template shadowrootmode="open">
+            <section class="today-card">
+              <span class="fact-type">
+                Profile Views
+              </span>
+              <img class="social-media-icon" title="social media icon">
+              <span class="amount">
+                52k
+              </span>
+              <p class="change">
+                <img class="direction-icon" title="Indicates increase or decrease">
+                <span>
+                  1375%
+                </span>
+              </p>
+            </section>
+            <style>
+              section[class="today-card"] {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                justify-content: space-between;
+                background: var(--card-bg);
+                box-sizing: border-box;
+                padding: 40px;
+                border-radius: 10px;
+                row-gap: 20px;
+                height: 100%;
+                width: 100%;
+              }
+
+              span[class="fact-type"] {
+                color: var(--alternative-color);
+              }
+
+              span[class="amount"] {
+                font-size: 2.5em;
+                font-weight: 700;
+                color: var(--heading-text);
+              }
+
+              p[class="change"] {
+                display: grid;
+                align-items: center;
+                grid-auto-flow: column;
+                gap: 10px;
+                color: var(--text-update);
+                width: min-content;
+              }
+
+              img {
+                justify-self: end;
+              }
+
+              :host([change="increase"]) {
+                --text-update: hsl(163, 72%, 41%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-up.svg");
+                }
+              }
+
+              :host([change="decrease"]) {
+                --text-update: hsl(356, 69%, 56%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-down.svg");
+                }
+              }
+
+              :host([type="facebook"]) {
+                --social-media-color: hsl(208, 92%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-facebook.svg) / "Facebook Icon";
+                }
+              }
+
+              :host([type="instagram"]) {
+                --social-media-color: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-instagram.svg) / "Instagram Icon";
+                }
+              }
+
+              :host([type="twitter"]) {
+                --social-media-color: hsl(203, 89%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-twitter.svg) / "Twitter Icon";
+                }
+              }
+
+              :host([type="youtube"]) {
+                --social-media-color: hsl(348, 97%, 39%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-youtube.svg) / "Youtube Icon";
+                }
+              }
+            </style>
+          </template>
+        </today-card>
+
+        <today-card type="twitter" change="increase">
+          <template shadowrootmode="open">
+            <section class="today-card">
+              <span class="fact-type">
+                Retweets
+              </span>
+              <img class="social-media-icon" title="social media icon">
+              <span class="amount">
+                117
+              </span>
+              <p class="change">
+                <img class="direction-icon" title="Indicates increase or decrease">
+                <span>
+                  303%
+                </span>
+              </p>
+            </section>
+            <style>
+              section[class="today-card"] {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                justify-content: space-between;
+                background: var(--card-bg);
+                box-sizing: border-box;
+                padding: 40px;
+                border-radius: 10px;
+                row-gap: 20px;
+                height: 100%;
+                width: 100%;
+              }
+
+              span[class="fact-type"] {
+                color: var(--alternative-color);
+              }
+
+              span[class="amount"] {
+                font-size: 2.5em;
+                font-weight: 700;
+                color: var(--heading-text);
+              }
+
+              p[class="change"] {
+                display: grid;
+                align-items: center;
+                grid-auto-flow: column;
+                gap: 10px;
+                color: var(--text-update);
+                width: min-content;
+              }
+
+              img {
+                justify-self: end;
+              }
+
+              :host([change="increase"]) {
+                --text-update: hsl(163, 72%, 41%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-up.svg");
+                }
+              }
+
+              :host([change="decrease"]) {
+                --text-update: hsl(356, 69%, 56%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-down.svg");
+                }
+              }
+
+              :host([type="facebook"]) {
+                --social-media-color: hsl(208, 92%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-facebook.svg) / "Facebook Icon";
+                }
+              }
+
+              :host([type="instagram"]) {
+                --social-media-color: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-instagram.svg) / "Instagram Icon";
+                }
+              }
+
+              :host([type="twitter"]) {
+                --social-media-color: hsl(203, 89%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-twitter.svg) / "Twitter Icon";
+                }
+              }
+
+              :host([type="youtube"]) {
+                --social-media-color: hsl(348, 97%, 39%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-youtube.svg) / "Youtube Icon";
+                }
+              }
+            </style>
+          </template>
+        </today-card>
+
+
+        <today-card type="twitter" change="increase">
+          <template shadowrootmode="open">
+            <section class="today-card">
+              <span class="fact-type">
+                Likes
+              </span>
+              <img class="social-media-icon" title="social media icon">
+              <span class="amount">
+                507
+              </span>
+              <p class="change">
+                <img class="direction-icon" title="Indicates increase or decrease">
+                <span>
+                  553%
+                </span>
+              </p>
+            </section>
+            <style>
+              section[class="today-card"] {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                justify-content: space-between;
+                background: var(--card-bg);
+                box-sizing: border-box;
+                padding: 40px;
+                border-radius: 10px;
+                row-gap: 20px;
+                height: 100%;
+                width: 100%;
+              }
+
+              span[class="fact-type"] {
+                color: var(--alternative-color);
+              }
+
+              span[class="amount"] {
+                font-size: 2.5em;
+                font-weight: 700;
+                color: var(--heading-text);
+              }
+
+              p[class="change"] {
+                display: grid;
+                align-items: center;
+                grid-auto-flow: column;
+                gap: 10px;
+                color: var(--text-update);
+                width: min-content;
+              }
+
+              img {
+                justify-self: end;
+              }
+
+              :host([change="increase"]) {
+                --text-update: hsl(163, 72%, 41%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-up.svg");
+                }
+              }
+
+              :host([change="decrease"]) {
+                --text-update: hsl(356, 69%, 56%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-down.svg");
+                }
+              }
+
+              :host([type="facebook"]) {
+                --social-media-color: hsl(208, 92%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-facebook.svg) / "Facebook Icon";
+                }
+              }
+
+              :host([type="instagram"]) {
+                --social-media-color: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-instagram.svg) / "Instagram Icon";
+                }
+              }
+
+              :host([type="twitter"]) {
+                --social-media-color: hsl(203, 89%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-twitter.svg) / "Twitter Icon";
+                }
+              }
+
+              :host([type="youtube"]) {
+                --social-media-color: hsl(348, 97%, 39%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-youtube.svg) / "Youtube Icon";
+                }
+              }
+            </style>
+          </template>
+        </today-card>
+
+        <today-card type="youtube" change="decrease">
+          <template shadowrootmode="open">
+            <section class="today-card">
+              <span class="fact-type">
+                Likes
+              </span>
+              <img class="social-media-icon" title="social media icon">
+              <span class="amount">
+                107
+              </span>
+              <p class="change">
+                <img class="direction-icon" title="Indicates increase or decrease">
+                <span>
+                  19%
+                </span>
+              </p>
+            </section>
+            <style>
+              section[class="today-card"] {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                justify-content: space-between;
+                background: var(--card-bg);
+                box-sizing: border-box;
+                padding: 40px;
+                border-radius: 10px;
+                row-gap: 20px;
+                height: 100%;
+                width: 100%;
+              }
+
+              span[class="fact-type"] {
+                color: var(--alternative-color);
+              }
+
+              span[class="amount"] {
+                font-size: 2.5em;
+                font-weight: 700;
+                color: var(--heading-text);
+              }
+
+              p[class="change"] {
+                display: grid;
+                align-items: center;
+                grid-auto-flow: column;
+                gap: 10px;
+                color: var(--text-update);
+                width: min-content;
+              }
+
+              img {
+                justify-self: end;
+              }
+
+              :host([change="increase"]) {
+                --text-update: hsl(163, 72%, 41%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-up.svg");
+                }
+              }
+
+              :host([change="decrease"]) {
+                --text-update: hsl(356, 69%, 56%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-down.svg");
+                }
+              }
+
+              :host([type="facebook"]) {
+                --social-media-color: hsl(208, 92%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-facebook.svg) / "Facebook Icon";
+                }
+              }
+
+              :host([type="instagram"]) {
+                --social-media-color: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-instagram.svg) / "Instagram Icon";
+                }
+              }
+
+              :host([type="twitter"]) {
+                --social-media-color: hsl(203, 89%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-twitter.svg) / "Twitter Icon";
+                }
+              }
+
+              :host([type="youtube"]) {
+                --social-media-color: hsl(348, 97%, 39%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-youtube.svg) / "Youtube Icon";
+                }
+              }
+            </style>
+          </template>
+        </today-card>
+
+        <today-card type="youtube" change="decrease">
+          <template shadowrootmode="open">
+            <section class="today-card">
+              <span class="fact-type">
+                Total Views
+              </span>
+              <img class="social-media-icon" title="social media icon">
+              <span class="amount">
+                1407
+              </span>
+              <p class="change">
+                <img class="direction-icon" title="Indicates increase or decrease">
+                <span>
+                  12%
+                </span>
+              </p>
+            </section>
+            <style>
+              section[class="today-card"] {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                justify-content: space-between;
+                background: var(--card-bg);
+                box-sizing: border-box;
+                padding: 40px;
+                border-radius: 10px;
+                row-gap: 20px;
+                height: 100%;
+                width: 100%;
+              }
+
+              span[class="fact-type"] {
+                color: var(--alternative-color);
+              }
+
+              span[class="amount"] {
+                font-size: 2.5em;
+                font-weight: 700;
+                color: var(--heading-text);
+              }
+
+              p[class="change"] {
+                display: grid;
+                align-items: center;
+                grid-auto-flow: column;
+                gap: 10px;
+                color: var(--text-update);
+                width: min-content;
+              }
+
+              img {
+                justify-self: end;
+              }
+
+              :host([change="increase"]) {
+                --text-update: hsl(163, 72%, 41%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-up.svg");
+                }
+              }
+
+              :host([change="decrease"]) {
+                --text-update: hsl(356, 69%, 56%);
+
+                img[class="direction-icon"] {
+                  content: url("./images/icon-down.svg");
+                }
+              }
+
+              :host([type="facebook"]) {
+                --social-media-color: hsl(208, 92%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-facebook.svg) / "Facebook Icon";
+                }
+              }
+
+              :host([type="instagram"]) {
+                --social-media-color: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-instagram.svg) / "Instagram Icon";
+                }
+              }
+
+              :host([type="twitter"]) {
+                --social-media-color: hsl(203, 89%, 53%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-twitter.svg) / "Twitter Icon";
+                }
+              }
+
+              :host([type="youtube"]) {
+                --social-media-color: hsl(348, 97%, 39%);
+
+                img[class="social-media-icon"] {
+                  content: url(./images/icon-youtube.svg) / "Youtube Icon";
+                }
+              }
+            </style>
+          </template>
+        </today-card>
+      </section>
+
+      <style>
+        section[class="today-stats"] {
+          display: grid;
+          box-sizing: border-box;
+          padding: 10px 10%;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+          margin-bottom: 50px;
+        }
+
+        @container(inline-size < 1000px) {
+          section[class="today-stats"] {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+      </template>
+    </section>
+
+  </main>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/MaudePod">Maude Pod</a>.
+  </div>
+</body>
+
+</html>
