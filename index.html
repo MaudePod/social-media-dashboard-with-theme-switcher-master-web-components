@@ -98,7 +98,6 @@
                     margin: 0;
                   }
 
-
                   section[class="social-media-type"] {
                     display: grid;
                     place-items: center;
@@ -301,7 +300,6 @@
                 </style>
               </template>
             </total-card>
-
 
             <total-card type="instagram" change="increase">
               <template shadowrootmode="open">
@@ -855,7 +853,7 @@
                 }
               }
 
-              :host([change="decrease"]) {
+              :([change="decrease"]) {
                 --text-update: hsl(356, 69%, 56%);
 
                 img[class="direction-icon"] {
@@ -1107,7 +1105,6 @@
             </style>
           </template>
         </today-card>
-
 
         <today-card type="twitter" change="increase">
           <template shadowrootmode="open">

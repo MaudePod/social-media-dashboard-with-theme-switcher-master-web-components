@@ -159,6 +159,19 @@ div[class="attribution"] {
     margin: 0 auto;
 }
 
+@starting-style {
+    body {
+        opacity: 0;
+    }
+}
+
+
+@media (prefers-reduced-motion :no-preference) {
+    body {
+        transition: ease-in-out 3s;
+    }
+}
+
 @container(inline-size < 1000px) {
     section[class="header"] {
         grid-template-areas: "h1"
@@ -173,5 +186,4 @@ div[class="attribution"] {
         justify-self: unset;
         width: 100%;
     }
-
 }
